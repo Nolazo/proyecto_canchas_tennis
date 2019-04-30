@@ -1,7 +1,7 @@
 //ClienteRoute
 const express = require('express');
 const router = express.Router();
-const cancha = require('../controllers/cliente.controller');
+const cliente = require('../controllers/cliente.controller');
 
 router.get('/', cliente.getClientes);
 router.post('/', cliente.createCLiente);

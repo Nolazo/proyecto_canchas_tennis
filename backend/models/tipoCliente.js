@@ -2,7 +2,11 @@ const mongoose = require('mongoose');
 const { Schema } = mongoose;
 
 const TipoClienteSchema = new Schema({
-    detalle: { type: String, required: true },
+    _id: mongoose.Schema.Types.ObjectId,
+    tipo: { type: String, required: true },
+    valor: { type: Number, required: true },
+    horario: {},
+
 
 });
 
