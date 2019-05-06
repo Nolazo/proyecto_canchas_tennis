@@ -1,0 +1,16 @@
+<form (ngSubmit)="addCancha(testForm)" #testForm="ngForm">
+    <div>
+        <input type="string" name="numero" #name="ngModel" [(ngModel)]="testService.selectedCancha.numero">
+        <button>
+            Save
+        </button>
+    </div>
+</form>
+
+<table>
+    <tr *ngFor="let cancha of testService.canchas">
+        <td>{{cancha.estado}}</td>
+        <td>{{cancha.numero}}</td>
+        <td>{{cancha.tipoCancha}}</td>
+    </tr>
+</table>

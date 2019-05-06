@@ -2,7 +2,8 @@ const canchaController = {};
 const Cancha = require('../models/cancha');
 
 canchaController.getCanchas = async(req, res) => {
-    const canchas = await Cancha.find();
+    const canchas = await Cancha.find()
+        .populate('tipoCancha');
     res.json(canchas);
 };
 
@@ -23,7 +24,7 @@ canchaController.editCancha = async(req, res) => {
     const { id } = req.params;
     const cancha = {
         numero: req.body.numero,
-        date: req.body.date
+        estado: req.body.estado
     };
     await Cancha.findByIdAndUpdate(id, { $set: cancha }, { new: true });
     res.json({ status: 'Cancha Actualizada' });

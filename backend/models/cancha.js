@@ -1,13 +1,13 @@
 const mongoose = require('mongoose');
 const { Schema } = mongoose;
+const { ObjectId } = Schema;
 
 const CanchaSchema = new Schema({
-
-    numero: { type: Number, required: true },
-    tipo: { type: String, required: true },
-    date: { type: Date, default: Date.now },
-    pago: { type: Schema.Types.ObjectId, ref: 'Pago' }
+    numero: { type: Number },
+    tipoCancha: { type: mongoose.Schema.Types.ObjectId, ref: 'TipoCancha' },
+    estado: { type: String },
 
 });
+
 
 module.exports = mongoose.model('Cancha', CanchaSchema);
