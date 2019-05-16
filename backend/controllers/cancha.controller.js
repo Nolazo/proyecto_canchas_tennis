@@ -1,9 +1,21 @@
 const canchaController = {};
 const Cancha = require('../models/cancha');
 
+// EJEPLO PARA HACER LAS QUERYS
+// canchaController.getTipo = async(req, res) => {
+//     const canchas = await Cancha.find()
+//         .where('numero').equals(12)
+//     res.json(canchas);
+// }
+
+
+canchaController.getTipo = async(req, res) => {
+    const cc = await Cancha.aggregate
+};
+
 canchaController.getCanchas = async(req, res) => {
     const canchas = await Cancha.find()
-        .populate('tipoCancha');
+        .populate('tipoCancha', 'tipo');
     res.json(canchas);
 };
 

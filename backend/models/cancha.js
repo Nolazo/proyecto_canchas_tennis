@@ -4,10 +4,8 @@ const { ObjectId } = Schema;
 
 const CanchaSchema = new Schema({
     numero: { type: Number },
-    tipoCancha: { type: mongoose.Schema.Types.ObjectId, ref: 'TipoCancha' },
     estado: { type: String },
-
+    tipoCancha: { type: mongoose.Schema.Types.ObjectId, ref: 'TipoCancha' }
 });
-
 
 module.exports = mongoose.model('Cancha', CanchaSchema);

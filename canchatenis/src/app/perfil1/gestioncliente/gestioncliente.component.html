@@ -1,0 +1,46 @@
+<!-- Page Content -->
+
+<body>
+    <br><br><br>
+    <div class="container">
+        <nav>
+            <ul class="nav nav-tabs">
+                <li class="nav-item"><a class="nav-link active" [routerLink]="['.']" routerLinkActive="router-link-active">SOCIO</a>
+                    <li class="nav-item"><a class="nav-link" [routerLink]="['clientenosocio']" routerLinkActive="router-link-active">NO SOCIO</a>
+            </ul>
+        </nav>
+        <br>
+        <div class="row">
+            <form>
+                <div class="form-row">
+
+                    <label for="nombrecliente">Nombre Cliente</label>
+                    <input type="text" class="form-control" id="nombrecliente" placeholder="Ingrese nombre"> <br>
+                    <label for="nombrecliente">Apellido Cliente</label>
+                    <input type="text" class="form-control" id="apellidocliente" placeholder="Ingrese apellido"> <br>
+                    <label for="rutcliente">Rut Cliente</label>
+                    <input type="text" class="form-control" id="rutcliente" maxlength="9" placeholder="Ingrese Rut"> <br>
+                    <label for="telefono">Teléfono</label>
+                    <input type="tel" class="form-control" id="telefono" maxlength="11">
+                    <label for="correousuario">Email address</label>
+                    <input type="email" class="form-control" id="correousuario" placeholder="nombre@ejemplo.com"> <br>
+                    <label for="fechanacimiento">Fecha de Nacimiento</label>
+                    <input type="date" class="form-control" id="fechanacimiento"> <br>
+                    <label for="datosempresa">Seleccione Empresa</label>
+                    <select class="form-control" id="datosempresa">
+              <option>1</option>
+              <option>2</option>
+              <option>3</option>
+              <option>4</option>
+              <option>5</option>
+            </select>
+                    <br><br>
+                    <button type="submit" class="btn btn-success">REGISTRAR</button>
+                </div>
+            </form>
+
+
+        </div>
+    </div>
+</body>
+<!-- /.container -->

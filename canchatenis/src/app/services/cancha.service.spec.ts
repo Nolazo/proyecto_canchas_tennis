@@ -1,12 +1,12 @@
 import { TestBed } from '@angular/core/testing';
 
-import { TestService } from './test.service';
+import { CanchaService } from './cancha.service';
 
 describe('TestService', () => {
   beforeEach(() => TestBed.configureTestingModule({}));
 
   it('should be created', () => {
-    const service: TestService = TestBed.get(TestService);
+    const service: CanchaService = TestBed.get(CanchaService);
     expect(service).toBeTruthy();
   });
 });

@@ -4,14 +4,15 @@ const { ObjectId } = Schema;
 
 const ClienteSchema = new Schema({
     rut: { type: String },
-    nSocio: { type: Number },
     nombre: { type: String },
-    estadoReserva: { type: String },
-    empresa: { type: String },
     apellido: { type: String },
-    telefono: { type: Number },
+    telefono: { type: String },
     correo: { type: String },
-
+    nacimiento: { type: Date },
+    empresa: { type: mongoose.Schema.Types.ObjectId, ref: 'Empresa' },
+    cuenta: { type: mongoose.Schema.Types.ObjectId, ref: 'Cuenta' },
+    tipoCliente: { type: mongoose.Schema.Types.ObjectId, ref: 'TipoCliente' },
+    visitas: { type: Number }
 });
 
 module.exports = mongoose.model('Cliente', ClienteSchema);

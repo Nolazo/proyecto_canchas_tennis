@@ -1,0 +1,33 @@
+<!-- Page Content -->
+
+<body >
+    <br><br><br>
+  <div  class="container">
+      <nav>
+          <ul class="nav nav-tabs">
+              <li class="nav-item"><a class="nav-link" [routerLink]="['..']" routerLinkActive="router-link-active">SOCIO</a>
+              <li class="nav-item"><a class="nav-link active" [routerLink]="['.']" routerLinkActive="router-link-active">NO SOCIO</a>
+          </ul>
+      </nav>  
+      <br> 
+    <div  class="row">
+        <form method="post">
+            <div class="form-row">
+              <label for="nombrecliente">Nombre Cliente</label>
+              <input type="text" class="form-control" id="nombrecliente" placeholder="Ingrese nombre completo"> <br> 
+              <label for="rutcliente">Rut Cliente</label>
+              <input type="text" class="form-control" id="rutcliente" maxlength="9" placeholder="Sin puntos ni guión"> <br> 
+              <label for="telefono">Teléfono</label>
+              <input type="tel" class="form-control" id="telefono" maxlength="11">
+              <br><br>
+              <button type="submit" class="btn btn-success">REGISTRAR</button>
+            </div>
+          </form>
+  </div>
+  </div>
+  
+
+
+
+  </body>
+  <!-- /.container -->
