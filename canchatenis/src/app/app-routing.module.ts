@@ -14,6 +14,8 @@ import {ListarusuariosComponent} from '../app/perfil2/gestionusuario/listarusuar
 import {LoginComponent} from '../app/login/login.component'
 import { ReservaComponent } from './perfil1/gestionreserva/reserva/reserva.component';
 
+import { TestComponent } from './components/test/test.component';
+
 const routes: Routes = [
 {path: 'perfil1', component:Perfil1Component},
 {path: 'perfil1/gestioncliente', component:GestionclienteComponent},
@@ -27,7 +29,8 @@ const routes: Routes = [
 {path: 'perfil1/gestioncliente/clientenosocio', component:ClientenosocioComponent},
 {path: 'perfil2/gestionusuario/listarusuarios', component:ListarusuariosComponent},
 {path: 'login', component:LoginComponent},
-{path: 'perfil1/gestionreserva/reserva', component:ReservaComponent}
+{path: 'perfil1/gestionreserva/reserva', component:ReservaComponent},
+{path: 'test', component:TestComponent}
 ];
 
 @NgModule({

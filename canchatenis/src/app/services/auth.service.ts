@@ -20,9 +20,6 @@ export class AuthService {
     scope: 'openid'
   });
 
-  
-  
-
   constructor(public router: Router) {
     this._idToken = '';
     this._accessToken = '';

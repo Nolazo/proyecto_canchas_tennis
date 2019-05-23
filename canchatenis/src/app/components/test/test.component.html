@@ -1,8 +1,8 @@
 <form (ngSubmit)="addCancha(testForm)" #testForm="ngForm">
     <div>
-        <input type="string" name="numero" #name="ngModel" [(ngModel)]="canchaService.selectedCancha.numero">
-        <input type="string" name="estado" #name="ngModel" [(ngModel)]="canchaService.selectedCancha.estado">
-        <input type="string" name="tipoCancha" #name="ngModel" [(ngModel)]="canchaService.selectedCancha.tipoCancha">
+        <input type="string" name="numero" #numero="ngModel" [(ngModel)]="canchaService.selectedCancha.numero">
+        <input type="string" name="estado" #estado="ngModel" [(ngModel)]="canchaService.selectedCancha.estado">
+        <input type="string" name="tipoCancha" #tipo="ngModel" [(ngModel)]="canchaService.selectedCancha.tipoCancha">
         <button>
             Save
         </button>
@@ -10,7 +10,10 @@
 
 </form>
 
-<ul *ngFor="let c of canchaService.canchas">
-    <li>{{c.estado}}</li>
-    <li>{{c.numero}}</li>
-</ul>
+<table>
+    <tr *ngFor="let cancha of canchaService.canchas">
+        <td>{{ cancha.numero }}</td>
+        <td>{{ cancha.estado }}</td>
+        <td>{{ cancha.tipoCancha.tipo}}</td>
+    </tr>
+</table>

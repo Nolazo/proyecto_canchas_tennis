@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { TipoCancha } from '../models/tipoCancha/tipo-cancha';
+import { TipoCancha } from '../models/tipo-cancha';
 import { map } from 'rxjs/operators';
 
 @Injectable({

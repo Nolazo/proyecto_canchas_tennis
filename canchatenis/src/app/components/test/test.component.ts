@@ -1,10 +1,8 @@
-import { Component, OnInit, Pipe } from '@angular/core';
+import { Component, OnInit, OnChanges, SimpleChange } from '@angular/core';
 import { CanchaService } from '../../services/cancha.service';
 import { TipoCanchaService } from '../../services/tipo-cancha.service'
 import { NgForm } from '@angular/forms';
-import { Cancha } from '../../models/cancha/cancha';
-import { TipoCancha } from '../../models/tipoCancha/tipo-cancha'
-import { subscribeOn, map } from 'rxjs/operators';
+import { Cancha } from '../../models/cancha';
 
 
 
@@ -17,16 +15,13 @@ import { subscribeOn, map } from 'rxjs/operators';
 export class TestComponent implements OnInit {
   
 
-  constructor(public canchaService: CanchaService,
+  constructor(private canchaService: CanchaService,
               private tipoService: TipoCanchaService ) { }
 
 
   ngOnInit() {
     this.getCanchas();
-  //this.getTipo();
-
   }
-
 
 
   addCancha(form?: NgForm){
@@ -40,7 +35,7 @@ export class TestComponent implements OnInit {
   getCanchas(){
     this.canchaService.getCanchas()
     .subscribe(res =>{
-      this.canchaService.selectedCancha = res as Cancha;
+      this.canchaService.canchas = res as Cancha[];
       console.log(res);
     });
   }
