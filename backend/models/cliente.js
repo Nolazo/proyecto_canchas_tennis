@@ -10,9 +10,13 @@ const ClienteSchema = new Schema({
     correo: { type: String },
     nacimiento: { type: Date },
     empresa: { type: mongoose.Schema.Types.ObjectId, ref: 'Empresa' },
-    cuenta: { type: mongoose.Schema.Types.ObjectId, ref: 'Cuenta' },
-    tipoCliente: { type: mongoose.Schema.Types.ObjectId, ref: 'TipoCliente' },
-    visitas: { type: Number }
+    tipoCliente: { type: String },
+    visitas: { type: Number },
+    //logica de la acc
+    username: { type: String },
+    contraseña: { type: String },
+    contraseña2: { type: String },
+    bloqueado: { type: Boolean }
 });
 
 module.exports = mongoose.model('Cliente', ClienteSchema);

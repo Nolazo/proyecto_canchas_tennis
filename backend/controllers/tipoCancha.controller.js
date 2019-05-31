@@ -1,17 +1,22 @@
-const tipoCanchaController = {};
-const TipoCancha = require('../models/tipoCancha');
+const tipoController = {};
+const Tipo = require('../models/tipoCancha');
 
-tipoCanchaController.getTipoCanchas = async(req, res) => {
-    const tipoCanchas = await TipoCancha.find();
-    res.json(tipoCanchas);
+tipoController.getTipoCanchas = async(req, res) => {
+    const tipos = await Tipo.find()
+    res.json(tipos);
 };
 
-tipoCanchaController.createTipoCancha = async(req, res) => {
-    const tipoCancha = new TipoCancha(req.body);
-    await tipoCancha.save();
+tipoController.createTipoCancha = async(req, res) => {
+    const tipo = new Tipo(req.body);
+    await tipo.save();
     res.json({
-        status: 'Tipo cancha creada'
+        status: 'Tipo guardada SAPBEEEE'
     });
 };
 
-module.exports = tipoCanchaController;
+tipoController.getTipoCancha = async(req, res) => {
+    const tipo = await Tipo.findById(req.params.id);
+    res.json(tipo);
+};
+
+module.exports = tipoController;

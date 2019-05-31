@@ -6,8 +6,7 @@ export class Cliente {
     telefono?: string;
     correo?: String;
     nacimiento?: Date;
-    empresa?: [];
-    cuenta?: [];
-    tipoCliente?: [];
+    empresa?: any;
+    tipoCliente?: any;
     visitas?: number;
 }

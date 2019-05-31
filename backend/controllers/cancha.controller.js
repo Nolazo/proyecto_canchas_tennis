@@ -8,27 +8,25 @@ const Cancha = require('../models/cancha');
 //     res.json(canchas);
 // }
 
-
-canchaController.getTipo = async(req, res) => {
-    const cc = await Cancha.aggregate
-};
-
 canchaController.getCanchas = async(req, res) => {
     const canchas = await Cancha.find()
-        .populate('tipoCancha', 'tipo');
+        .populate('tipoCancha')
     res.json(canchas);
 };
 
 canchaController.createCancha = async(req, res) => {
     const cancha = new Cancha(req.body);
-    await cancha.save();
+    await cancha.save(function(err, cancha) {
+        cancha.populate(cancha, { path: '_tipoCancha' })
+    });
     res.json({
-        status: 'Cancha guardada SAPBEEEE'
+        status: 'Cancha guardada'
     });
 };
 
 canchaController.getCancha = async(req, res) => {
-    const cancha = await Cancha.findById(req.params.id);
+    const cancha = await Cancha.findById(req.params.id)
+        .populate('tipoCancha')
     res.json(cancha);
 };
 

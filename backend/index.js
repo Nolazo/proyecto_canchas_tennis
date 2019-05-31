@@ -17,6 +17,8 @@ app.use(cors({ origin: 'http://localhost:4200' }));
 app.use('/api/cancha', require('./routes/cancha.routes'));
 app.use('/api/cliente', require('./routes/cliente.routes'));
 app.use('/api/tipoCancha', require('./routes/tipoCancha.routes'));
+app.use('/api/empresa', require('./routes/empresa.routes'));
+app.use('/api/hora', require('./routes/hora.routes'));
 
 app.listen(app.get('port'), () => {
     console.log('Server on port ', app.get('port'));

@@ -11,34 +11,32 @@
         </nav>
         <br>
         <div class="row">
-            <form>
+            <form (ngSubmit)="addCliente(gClienteForm)" #gClienteForm="ngForm">
                 <div class="form-row">
-
                     <label for="nombrecliente">Nombre Cliente</label>
-                    <input type="text" class="form-control" id="nombrecliente" placeholder="Ingrese nombre"> <br>
-                    <label for="nombrecliente">Apellido Cliente</label>
-                    <input type="text" class="form-control" id="apellidocliente" placeholder="Ingrese apellido"> <br>
+                    <input type="text" name="nombre" #nombre="ngModel" [(ngModel)]="clienteService.selectedCliente.nombre" class="form-control" placeholder="Ingrese nombre"> <br>
+                    <label for="apellidocliente">Apellido Cliente</label>
+                    <input type="text" name="apellido" #apellido="ngModel" [(ngModel)]="clienteService.selectedCliente.apellido" class="form-control" placeholder="Ingrese apellido"> <br>
                     <label for="rutcliente">Rut Cliente</label>
-                    <input type="text" class="form-control" id="rutcliente" maxlength="9" placeholder="Ingrese Rut"> <br>
+                    <input type="text" name="rut" #rut="ngModel" [(ngModel)]="clienteService.selectedCliente.rut" class="form-control" maxlength="9" placeholder="Ingrese Rut"> <br>
                     <label for="telefono">Teléfono</label>
-                    <input type="tel" class="form-control" id="telefono" maxlength="11">
+                    <input type="tel" name="telefono" #telefono="ngModel" [(ngModel)]="clienteService.selectedCliente.telefono" class="form-control" maxlength="11">
                     <label for="correousuario">Email address</label>
-                    <input type="email" class="form-control" id="correousuario" placeholder="nombre@ejemplo.com"> <br>
+                    <input type="email" name="correo" #correo="ngModel" [(ngModel)]="clienteService.selectedCliente.correo" class="form-control" placeholder="nombre@ejemplo.com"> <br>
                     <label for="fechanacimiento">Fecha de Nacimiento</label>
-                    <input type="date" class="form-control" id="fechanacimiento"> <br>
+                    <input type="date" name="nacimiento" #nacimiento="ngModel" [(ngModel)]="clienteService.selectedCliente.nacimiento" class="form-control"> <br>
                     <label for="datosempresa">Seleccione Empresa</label>
-                    <select class="form-control" id="datosempresa">
-              <option>1</option>
-              <option>2</option>
-              <option>3</option>
-              <option>4</option>
-              <option>5</option>
-            </select>
+                    <!-- V   PENDING   V -->
+                    <select #test class="form-control">
+                        <option *ngFor="let e of empresaService.empresas" value="e._id" >{{e.nombre}}</option>
+                    </select>
+                    <br>
+
+                    <p></p>
                     <br><br>
                     <button type="submit" class="btn btn-success">REGISTRAR</button>
                 </div>
             </form>
-
 
         </div>
     </div>

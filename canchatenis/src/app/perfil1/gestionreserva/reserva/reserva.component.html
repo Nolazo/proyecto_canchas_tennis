@@ -1,22 +1,25 @@
-<!-- Page Content -->
-
 <body>
     <div class="container">
-        <div class="shadow-sm p-3 mb-5 bg-white rounded">Small shadow</div>
 
+        <input type="text" class="form-control" name="searchText" placeholder="Buscar" [(ngModel)]="searchText">
 
-        <form method="post">
-            <div class="form-row">
-                <label for="nombrecliente">Nombre Cliente</label>
-                <input type="text" class="form-control" id="nombrecliente" placeholder="Ingrese nombre completo"> <br>
-                <label for="rutcliente">Rut Cliente</label>
-                <input type="text" class="form-control" id="rutcliente" maxlength="9" placeholder="Sin puntos ni guión"> <br>
-                <label for="telefono">Teléfono</label>
-                <input type="tel" class="form-control" id="telefono" maxlength="11">
+        <div>
+            <ul *ngFor=" let cliente of clientes | filter:[searchText, 'nombre']" class="list-group">
+                <li class="list-group-item ">{{cliente.nombre}}</li>
+            </ul>
+        </div>
+
+        <form method="POST ">
+            <div class="form-row ">
+                <label for="nombrecliente ">Nombre Cliente</label>
+                <input type="text " class="form-control " id="nombrecliente " placeholder="Ingrese nombre completo "> <br>
+                <label for="rutcliente ">Rut Cliente</label>
+                <input type="text " class="form-control " id="rutcliente " maxlength="9 " placeholder="Sin puntos ni guión "> <br>
+                <label for="telefono ">Teléfono</label>
+                <input type="tel " class="form-control " id="telefono " maxlength="11 ">
                 <br><br>
-                <button type="submit" class="btn btn-success">REGISTRAR</button>
+                <button type="submit " class="btn btn-success ">REGISTRAR</button>
             </div>
         </form>
     </div>
-
 </body>

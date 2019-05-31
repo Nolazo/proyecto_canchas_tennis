@@ -1,6 +1,5 @@
 import { Component, OnInit, OnChanges, SimpleChange } from '@angular/core';
 import { CanchaService } from '../../services/cancha.service';
-import { TipoCanchaService } from '../../services/tipo-cancha.service'
 import { NgForm } from '@angular/forms';
 import { Cancha } from '../../models/cancha';
 
@@ -14,9 +13,7 @@ import { Cancha } from '../../models/cancha';
 
 export class TestComponent implements OnInit {
   
-
-  constructor(private canchaService: CanchaService,
-              private tipoService: TipoCanchaService ) { }
+  constructor(private canchaService: CanchaService ) { }
 
 
   ngOnInit() {

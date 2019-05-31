@@ -2,6 +2,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {NoopAnimationsModule} from '@angular/platform-browser/animations';
 
 
 import { AppRoutingModule } from './app-routing.module';
@@ -21,8 +23,9 @@ import { ClientenosocioComponent } from './perfil1/gestioncliente/clientenosocio
 import { ListarusuariosComponent } from './perfil2/gestionusuario/listarusuarios/listarusuarios.component';
 
 //services
-import {AuthService} from './services/auth.service';
 import { ReservaComponent } from './perfil1/gestionreserva/reserva/reserva.component';
+import { FilterPipe } from './pipes/filter.pipe';
+import { RegistroComponent } from './perfil2/gestionusuario/registro/registro.component';
 
 @NgModule({
   declarations: [
@@ -41,16 +44,18 @@ import { ReservaComponent } from './perfil1/gestionreserva/reserva/reserva.compo
     ClientenosocioComponent,
     ListarusuariosComponent,
     ReservaComponent,
+    FilterPipe,
+    RegistroComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    BrowserAnimationsModule,
+    NoopAnimationsModule
   ],
-  providers: [
-    AuthService
-  ],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

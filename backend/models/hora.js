@@ -2,9 +2,9 @@ const mongoose = require('mongoose');
 const { Schema } = mongoose;
 
 const HoraSchema = new Schema({
-    fecha: { type: Date },
-    inicio: { type: Date },
-    fin: { type: Date },
+    fecha: { type: Date, default: Date.now },
+    inicio: { type: Number },
+    fin: { type: Number },
     estado: { type: String }
 });
 

@@ -1,6 +1,6 @@
 export class Cancha {
-    _id?: string;
-    numero?: number;
+    _id?: any;
+    numero?: any;
+    estado?: any;
     tipoCancha?: any;
-    estado?: Date;
 }

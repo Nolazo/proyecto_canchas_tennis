@@ -1,8 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Cancha } from '../models/cancha';
-import { TipoCancha } from '../models/tipo-cancha';
-
 
 
 @Injectable({
@@ -10,9 +8,8 @@ import { TipoCancha } from '../models/tipo-cancha';
 })
 export class CanchaService {
 
-  selectedCancha: Cancha;
-  canchas: Cancha[];
-  tipos: TipoCancha[];
+  selectedCancha: Cancha; // para crear una nueva cancha
+  canchas: Cancha[]; //para obtener los datos de la bd
   readonly URL_API = 'http://localhost:3000/api/cancha';
 
   constructor(private http: HttpClient) { 
