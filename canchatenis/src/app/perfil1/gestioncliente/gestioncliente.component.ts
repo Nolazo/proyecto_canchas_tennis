@@ -1,9 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
+
 import { Cliente } from '../../models/cliente';
 import { Empresa } from '../../models/empresa';
 import { ClienteService} from '../../services/cliente.service';
 import { EmpresaService } from '../../services/empresa.service';
+
+
+
 
 
 @Component({
@@ -16,7 +20,8 @@ export class GestionclienteComponent implements OnInit {
   empresaId: any;
 
   constructor(private clienteService: ClienteService,
-              private empresaService: EmpresaService) { }
+              private empresaService: EmpresaService,
+              ) { }
 
   ngOnInit() {
     this.getEmpresas();
@@ -41,5 +46,9 @@ export class GestionclienteComponent implements OnInit {
 
   onEmpresaSelected(val:any){
   }
+///////////////////////////////////////////////////////////////
+  rut(){
 
+  }
+///////////////////////////////////////////////////////////////
 }

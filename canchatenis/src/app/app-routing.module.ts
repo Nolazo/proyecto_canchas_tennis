@@ -13,6 +13,7 @@ import {ClientenosocioComponent} from '../app/perfil1/gestioncliente/clientenoso
 import {ListarusuariosComponent} from '../app/perfil2/gestionusuario/listarusuarios/listarusuarios.component'
 import {LoginComponent} from '../app/login/login.component'
 import { ReservaComponent } from './perfil1/gestionreserva/reserva/reserva.component';
+import {RegistroComponent} from './perfil2/gestionusuario/registro/registro.component'
 
 import { TestComponent } from './components/test/test.component';
 
@@ -28,6 +29,7 @@ const routes: Routes = [
 {path: 'perfil2', component:Perfil2Component},
 {path: 'perfil1/gestioncliente/clientenosocio', component:ClientenosocioComponent},
 {path: 'perfil2/gestionusuario/listarusuarios', component:ListarusuariosComponent},
+{path: 'perfil2/gestionusuario/registro', component:RegistroComponent},
 {path: 'login', component:LoginComponent},
 {path: 'perfil1/gestionreserva/reserva', component:ReservaComponent},
 {path: 'test', component:TestComponent}

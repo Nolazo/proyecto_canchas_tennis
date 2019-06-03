@@ -9,4 +9,9 @@ export class Cliente {
     empresa?: any;
     tipoCliente?: any;
     visitas?: number;
+    //logica de la acc
+    username?: string;
+    password?: string;
+    password2?: string;
+    bloqueado?: boolean;
 }

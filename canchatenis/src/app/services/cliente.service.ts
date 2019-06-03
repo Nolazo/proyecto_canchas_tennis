@@ -31,4 +31,8 @@ export class ClienteService {
   deleteCliente(_id: string){
     return this.http.delete(this.URL_API+`/${_id}`);
   }
+
+  registerCliente(cliente: Cliente){
+    return this.http.post(this.URL_API+'/register', cliente);
+  }
 }

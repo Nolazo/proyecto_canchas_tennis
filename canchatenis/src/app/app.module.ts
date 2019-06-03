@@ -27,6 +27,9 @@ import { ReservaComponent } from './perfil1/gestionreserva/reserva/reserva.compo
 import { FilterPipe } from './pipes/filter.pipe';
 import { RegistroComponent } from './perfil2/gestionusuario/registro/registro.component';
 
+//plug ins
+
+
 @NgModule({
   declarations: [
     AppComponent,

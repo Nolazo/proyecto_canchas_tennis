@@ -14,8 +14,8 @@ const ClienteSchema = new Schema({
     visitas: { type: Number },
     //logica de la acc
     username: { type: String },
-    contraseña: { type: String },
-    contraseña2: { type: String },
+    password: { type: String },
+    password2: { type: String },
     bloqueado: { type: Boolean }
 });
 

@@ -26,6 +26,7 @@ export class ReservaComponent implements OnInit {
       .subscribe(res => {
         this.clienteService.clientes = res as Cliente[];
         console.log(res);
+        //AQUI LE DI EL VALOR DE LA RESPUESTA A UNA VARIABLES
         this.clientes = res;
         console.log(this.clientes);
       })

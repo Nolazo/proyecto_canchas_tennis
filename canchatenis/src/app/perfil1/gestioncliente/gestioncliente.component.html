@@ -18,7 +18,7 @@
                     <label for="apellidocliente">Apellido Cliente</label>
                     <input type="text" name="apellido" #apellido="ngModel" [(ngModel)]="clienteService.selectedCliente.apellido" class="form-control" placeholder="Ingrese apellido"> <br>
                     <label for="rutcliente">Rut Cliente</label>
-                    <input type="text" name="rut" #rut="ngModel" [(ngModel)]="clienteService.selectedCliente.rut" class="form-control" maxlength="9" placeholder="Ingrese Rut"> <br>
+                    <input type="text" name="rut" #rut="ngModel" [(ngModel)]="clienteService.selectedCliente.rut" class="form-control" maxlength="9" placeholder="Ingrese Rut" validateRut required> <br>
                     <label for="telefono">Teléfono</label>
                     <input type="tel" name="telefono" #telefono="ngModel" [(ngModel)]="clienteService.selectedCliente.telefono" class="form-control" maxlength="11">
                     <label for="correousuario">Email address</label>

@@ -52,60 +52,15 @@ function escapeRegex(text) {
 //LOGICA DE LA ACC
 
 clienteController.register = async(req, res) => {
-    const { username, correo, contraseña, contraseña2 } = req.body;
-
-    let errors = [];
-
-    //Valida los campos
-    if (!username || !correo || !contraseña || !contraseña2) {
-        errors.push({ msg: 'Llene todos los campos' });
-    }
-
+    const cliente = new Cliente(req.body);
     //Valida la contraseña y contraseña2
-    if (contraseña !== contraseña2) {
-        errors.push({ msg: 'Las contraseñas no coinciden' });
-    }
-
-    //Valida el largo de la contraseña 8======D
-    if (contraseña.length < 6) {
-        errors.push({ msg: 'La contraseña debe tener minimo 6 caracteres' });
-    }
-
-    if (errors.length > 0) {
-        res.render('register', {
-            errors,
-            username,
-            correo,
-            contraseña,
-            contraseña2
-        });
+    if (cliente.password == null) {
+        res.json("kh3 wea?");
     } else {
-        Cliente.findOne({ correo: correo })
-            .then(user => {
-                if (cliente) {
-                    //Si existe
-                    error.push({ msg: 'El correo ya esta registrado' });
-                    res.render('register', {
-                        errors,
-                        username,
-                        correo,
-                        contraseña,
-                        contraseña2
-                    });
-                } else {
-                    const newCliente = new Cliente({
-                        errors,
-                        username,
-                        correo,
-                        contraseña,
-                        contraseña2
-                    });
-
-                    console.log(newCliente)
-                    res.send('hello');
-                }
-            });
+        await cliente.save();
+        res.json(cliente);
     }
+
 };
 
 
