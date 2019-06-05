@@ -20,7 +20,6 @@ export class TestComponent implements OnInit {
     this.getCanchas();
   }
 
-
   addCancha(form?: NgForm){
     this.canchaService.postCancha(form.value)
     .subscribe(res =>{

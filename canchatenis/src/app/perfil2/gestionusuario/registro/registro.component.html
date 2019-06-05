@@ -6,23 +6,25 @@
                 <label for="nombrecliente">Nombre Cliente</label>
                 <input type="text" name="username" #username="ngModel" [(ngModel)]="clienteService.selectedCliente.username" class="form-control" placeholder="Ingrese nombre" required> <br>
                 <div class="container">
-                    <div *ngIf="username.touched && !username.valid" class="alert alert-danger" role="alert">
+                    <div *ngIf="vPass" class="alert alert-danger" role="alert">
                         <div *ngIf="username.errors.required"> es requerido la wea</div>
                     </div>
                 </div>
 
                 <br>
-
                 <label for="correousuario">Email address</label>
                 <input type="email" name="correo" #correo="ngModel" [(ngModel)]="clienteService.selectedCliente.correo" class="form-control" placeholder="nombre@ejemplo.com"> <br>
                 <label for="contraseña">Contraseña</label>
                 <input type="password" name="password" #password="ngModel" [(ngModel)]="clienteService.selectedCliente.password" class="form-control"> <br>
-                <label for="contraseña2">Confirme contraseña</label>
-                <input type="password" name="password2" #password2="ngModel" [(ngModel)]="clienteService.selectedCliente.password2" class="form-control"> <br>
             </div>
-            <div *ngIf="vPass"> porfavor ponga la contraseña</div>
-            <div *ngIf="vCorreo"> el correo ya existe</div>
             <input type="submit">
         </form>
+
+        <div class="alert-success" *ngIf="showSucessMessage">
+            Guardado Correctamente
+        </div>
+        <div class="alert-danger" *ngIf="serverErrorMessage">
+            {{serverErrorMessage}}
+        </div>
     </div>
 </div>

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
+
 @Component({
   selector: 'app-gestionreserva',
   templateUrl: './gestionreserva.component.html',
@@ -10,6 +11,7 @@ export class GestionreservaComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    
   }
 
 }

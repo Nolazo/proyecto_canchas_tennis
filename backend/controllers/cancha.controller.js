@@ -16,9 +16,7 @@ canchaController.getCanchas = async(req, res) => {
 
 canchaController.createCancha = async(req, res) => {
     const cancha = new Cancha(req.body);
-    await cancha.save(function(err, cancha) {
-        cancha.populate(cancha, { path: '_tipoCancha' })
-    });
+    await cancha.save();
     res.json({
         status: 'Cancha guardada'
     });

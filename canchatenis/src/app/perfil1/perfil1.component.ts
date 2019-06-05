@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {Router} from "@angular/router";
+import { Router } from "@angular/router";
+import { ClienteService } from "../services/cliente.service";
 
 @Component({
   selector: 'app-perfil1',
@@ -8,9 +9,22 @@ import {Router} from "@angular/router";
 })
 export class Perfil1Component implements OnInit {
 
-  constructor() { }
+  userDetalle;
+  constructor(private clienteService: ClienteService,
+              private router: Router) { }
 
   ngOnInit() {
+    this.clienteService.getUserProfile()
+      .subscribe(res=>{
+        this.userDetalle = res['cliente'];
+      },err =>{
+
+      })
+  }
+
+  onLogout(){
+    this.clienteService.deleteToken();
+    this.router.navigate(['/login']);
   }
   
 }

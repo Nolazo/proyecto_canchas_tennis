@@ -12,6 +12,5 @@ export class Cliente {
     //logica de la acc
     username?: string;
     password?: string;
-    password2?: string;
     bloqueado?: boolean;
 }

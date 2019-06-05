@@ -1,6 +1,9 @@
 <body>
     <div class="container">
         <h2>Gestiona la reserva </h2>
+        <td>
+            <a class="nav-link" [routerLink]="['reserva']" routerLinkActive="router-link-active">ingresa reserva</a>
+        </td>
         <table style="text-align: center" class="table-responsive" class="table table-bordered">
             <thead>
                 <tr>
@@ -23,10 +26,7 @@
             <tbody>
                 <tr>
                     <th scope="row">08:00</th>
-                    <td>
-                        <a class="nav-link" [routerLink]="['reserva']" routerLinkActive="router-link-active"></a>
-                    </td>
-                    <td> <button type="button"></button></td>
+                    <td> <button type="button" class="btn btn-success"></button></td>
                     <td> <button type="button" class="btn btn-success"></button></td>
                     <td> <button type="button" class="btn btn-success"></button></td>
                     <td> <button type="button" class="btn btn-success"></button></td>

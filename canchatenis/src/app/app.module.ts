@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {NoopAnimationsModule} from '@angular/platform-browser/animations';
 
@@ -27,7 +27,9 @@ import { ReservaComponent } from './perfil1/gestionreserva/reserva/reserva.compo
 import { FilterPipe } from './pipes/filter.pipe';
 import { RegistroComponent } from './perfil2/gestionusuario/registro/registro.component';
 
-//plug ins
+//otros
+import { AuthGuard } from './auth/auth.guard';
+import { AuthInterceptor } from './auth/auth.interceptor';
 
 
 @NgModule({
@@ -48,7 +50,8 @@ import { RegistroComponent } from './perfil2/gestionusuario/registro/registro.co
     ListarusuariosComponent,
     ReservaComponent,
     FilterPipe,
-    RegistroComponent,
+    RegistroComponent
+    
   ],
   imports: [
     BrowserModule,
@@ -58,7 +61,11 @@ import { RegistroComponent } from './perfil2/gestionusuario/registro/registro.co
     BrowserAnimationsModule,
     NoopAnimationsModule
   ],
-  providers: [],
+  providers: [{//weas para el intercepter
+    provide: HTTP_INTERCEPTORS,
+    useClass: AuthInterceptor,
+    multi: true
+  },AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

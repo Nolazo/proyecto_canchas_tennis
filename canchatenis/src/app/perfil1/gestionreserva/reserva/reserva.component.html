@@ -1,25 +1,75 @@
 <body>
     <div class="container">
-
-        <input type="text" class="form-control" name="searchText" placeholder="Buscar" [(ngModel)]="searchText">
-
-        <div>
+        <button (click)="nuf()" type="button" class="btn btn-success">  
+            Usuario Nuevo
+        </button>
+        <button (click)="ue()" type="button" class="btn btn-success">  
+            Usuario Existente
+        </button>
+    </div>
+    <div *ngIf="ueActive" class="container">
+        <input type="text" class="form-control" name="searchText" placeholder="Buscar" [(ngModel)]="searchText" (keyup)="sc()">
+        <div *ngIf="showClientes">
             <ul *ngFor=" let cliente of clientes | filter:[searchText, 'nombre']" class="list-group">
-                <li class="list-group-item ">{{cliente.nombre}}</li>
+                <li class="list-group-item ">
+                    <a *ngIf="cliente" (click)="onClick()">
+                        <span id="{{cliente._id}}" class="badge">{{cliente.nombre}}</span>
+                    </a>
+                </li>
             </ul>
+            <div>
+                <input type="text" [value]="clienteId" #_id="ngModel" [(ngModel)]="clienteService.selectedCliente._id">
+            </div>
         </div>
+    </div>
 
-        <form method="POST ">
+    <div *ngIf="nufActive" class="container">
+        <form (ngSubmit)="addCliente(clienteForm)" #clienteForm="ngForm">
             <div class="form-row ">
                 <label for="nombrecliente ">Nombre Cliente</label>
-                <input type="text " class="form-control " id="nombrecliente " placeholder="Ingrese nombre completo "> <br>
-                <label for="rutcliente ">Rut Cliente</label>
-                <input type="text " class="form-control " id="rutcliente " maxlength="9 " placeholder="Sin puntos ni guión "> <br>
-                <label for="telefono ">Teléfono</label>
-                <input type="tel " class="form-control " id="telefono " maxlength="11 ">
+                <input type="text" name="nombre" #nombre="ngModel" [(ngModel)]="clienteService.selectedCliente.nombre" class="form-control" placeholder="Ingrese nombre"> <br>
+                <label for="rutcliente">Rut Cliente</label>
+                <input type="text" class="form-control" maxlength="9 " placeholder="Sin puntos ni guión "> <br> <label for="telefono ">Teléfono</label>
+                <input type="tel" class="form-control" maxlength="11 ">
                 <br><br>
-                <button type="submit " class="btn btn-success ">REGISTRAR</button>
+                <button type="submit" class="btn btn-success ">Siguente</button>
             </div>
+        </form>
+    </div>
+
+    <div class="container">
+        <form (ngSubmit)="addValor(valorForm)" #valorForm="ngForm">
+
+        </form>
+    </div>
+
+    <div class="container">
+        <form (ngSubmit)="addHora(horaForm)" #horaForm="ngForm">
+
+        </form>
+    </div>
+
+    <div class="container">
+        <form (ngSubmit)="addReserva(reservaForm)" #reservaForm="ngForm">
+
+        </form>
+    </div>
+
+    <div class="container">
+        <form (ngSubmit)="addHoraCancha(horaCanchaForm)" #horaCanchaForm="ngForm">
+
+        </form>
+    </div>
+
+    <div class="container">
+        <form (ngSubmit)="addCancha(canchaForm)" #canchaForm="ngForm">
+
+        </form>
+    </div>
+
+    <div class="container">
+        <form (ngSubmit)="addHorario(horarioForm)" #horarioForm="ngForm">
+
         </form>
     </div>
 </body>
