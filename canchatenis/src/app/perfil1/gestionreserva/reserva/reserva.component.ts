@@ -64,7 +64,7 @@ export class ReservaComponent implements OnInit {
   }
 
   onClick(){
-    this.clienteId = event.srcElement.id; //para tomar el valor de la wea que se le hace click la wa opi
+    this.clienteId = event.srcElement.id; //para tomar el valor del elemento que se le hace click
     console.log(event);
     this.showClientes = false;
     console.log(this.clienteId);
