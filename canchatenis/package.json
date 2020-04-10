@@ -25,7 +25,7 @@
     "@fullcalendar/core": "^4.2.0",
     "@fullcalendar/daygrid": "^4.2.0",
     "angular-calendar": "^0.27.7",
-    "auth0-js": "^9.10.2",
+    "auth0-js": "^9.13.2",
     "bootstrap": "^4.3.1",
     "core-js": "^2.5.4",
     "date-fns": "^1.30.1",
