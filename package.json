@@ -12,7 +12,7 @@
     "license": "ISC",
     "dependencies": {
         "@angular/cli": "^7.3.8",
-        "auth0-js": "^9.10.2",
+        "auth0-js": "^9.13.2",
         "bcrypt": "^3.0.6",
         "connect-flash": "^0.1.1",
         "cors": "^2.8.5",
